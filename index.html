@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <style></style>
+  </head>
+
+  <body>
+    <header>
+      <form
+        class="hidden absolute inset-0 w-1/4 h-1/2 mx-auto my-auto bg-white shadow-xl p-5 border-2 border-blue-500 text-center z-10 rounded-lg"
+        id="form"
+      >
+        <label for="text" class="block text-left">Your Name</label>
+        <input
+          type="text"
+          name="text"
+          placeholder="Your Name"
+          class="w-full my-3 rounded-lg active:border-blue-500 focus:border-none"
+        />
+        <label for="text" class="block text-left">Email</label>
+        <input
+          type="text"
+          name="text"
+          placeholder="Your Name"
+          class="w-full my-3 rounded-lg active:border-blue-500 focus:border-none"
+        />
+        <label for="text" class="block text-left">Password</label>
+        <input
+          type="text"
+          name="text"
+          placeholder="Your Name"
+          class="w-full my-3 rounded-lg active:border-blue-500 focus:border-none"
+        />
+        <button class="px-5 py-2 bg-blue-500 rounded-md text-white">
+          submit
+        </button>
+      </form>
+      <nav class="flex justify-between items-center">
+        <h1 class="text-5xl text-blue-500 p-3 font-serif">Bansai</h1>
+        <ul class="flex">
+          <li class="p-2 m-2 text-tcolor text-l font-medium">
+            <a href="#" id="nav-btn1" onclick="navFun1()">Products</a>
+          </li>
+          <li class="p-2 m-2 text-tcolor text-l font-medium">
+            <a href="#" id="nav-btn2" onclick="navFun2()">Pricing</a>
+          </li>
+          <li class="p-2 m-2 text-tcolor text-l font-medium">
+            <button
+              id="dropdownDefaultButton"
+              data-dropdown-toggle="dropdown"
+              class="text-tcolor font-medium rounded-lg text-sm text-center inline-flex items-center"
+              type="button"
+            >
+              <a href="#" id="nav-btn3" onclick="navFun3()">Products</a
+              ><svg
+                class="w-2.5 h-2.5 ml-2.5"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 10 6"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="m1 1 4 4 4-4"
+                />
+              </svg>
+            </button>
+            <!-- Dropdown menu -->
+            <div
+              id="dropdown"
+              class="z-10 hidden bg-blue-500 divide-y divide-gray-100 rounded-lg shadow w-44"
+            >
+              <ul
+                class="py-2 text-sm text-gray-700 dark:text-white"
+                aria-labelledby="dropdownDefaultButton"
+              >
+                <li>
+                  <a
+                    href="#"
+                    class="block px-4 py-2 hover:text-blue-500 hover:bg-white hover:transition"
+                    >Dashboard</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="block px-4 py-2 hover:text-blue-500 hover:bg-white hover:transition"
+                    >Settings</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="block px-4 py-2 hover:text-blue-500 hover:bg-white hover:transition"
+                    >Earnings</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="block px-4 py-2 hover:text-blue-500 hover:bg-white hover:transition"
+                    >Sign out</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="p-2 m-2 text-tcolor text-l font-medium">
+            <button
+              id="dropdownButton"
+              data-dropdown-toggle="dropdown"
+              class="text-tcolor font-medium rounded-lg text-sm text-center inline-flex items-center"
+              type="button"
+            >
+              <a href="#" id="nav-btn4" onclick="navFun4()">See More</a
+              ><svg
+                class="w-2.5 h-2.5 ml-2.5"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 10 6"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="m1 1 4 4 4-4"
+                />
+              </svg>
+            </button>
+            <!-- Dropdown menu -->
+            <div
+              id="dropdown2"
+              class="z-10 hidden bg-blue-500 divide-y divide-gray-100 rounded-lg shadow w-44"
+            >
+              <ul
+                class="py-2 text-sm text-gray-700 dark:text-white"
+                aria-labelledby="dropdownDefaultButton"
+              >
+                <li>
+                  <a
+                    href="#"
+                    class="block px-4 py-2 hover:text-blue-500 hover:bg-white hover:transition"
+                    >Dashboard</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="block px-4 py-2 hover:text-blue-500 hover:bg-white hover:transition"
+                    >Settings</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="block px-4 py-2 hover:text-blue-500 hover:bg-white hover:transition"
+                    >Earnings</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="block px-4 py-2 hover:text-blue-500 hover:bg-white hover:transition"
+                    >Sign out</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+        <div class="nav-btns">
+          <button
+            class="px-5 py-1 m-2 border-2 border-blue-500 rounded-lg text-blue-500 hover:px-8 ease-in duration-200"
+            onclick="show()"
+          >
+            Login
+          </button>
+          <button
+            class="px-5 py-2 m-2 bg-blue-500 text-white rounded-lg hover:px-8 ease-in duration-200"
+          >
+            Start Free
+          </button>
+        </div>
+      </nav>
+      <div class="h-15 bg-blue-500 items-center flex justify-evenly">
+        <h1 class="text-white text-4xl font-bold">20% 0ff only for today</h1>
+        <h1 class="text-white text-4xl font-bold">
+          <span class="text-2xl line-through text-bgpri mx-2">29$</span>22$ Only
+        </h1>
+      </div>
+      <div class="price w-3/4 m-auto my-10">
+        <div class="price-top flex justify-between">
+          <h1 class="text-2xl">Plans & pricing</h1>
+          <div>
+            <button
+              class="transition text-white bg-blue-500 px-5 py-2 rounded-lg font-semibold hover:text-blue-500 hover:bg-white hover:border"
+            >
+              Montly
+            </button>
+            <button
+              class="transition text-white bg-blue-500 px-5 py-2 rounded-lg font-semibold hover:text-blue-500 hover:bg-white hover:border"
+            >
+              Yearly
+            </button>
+          </div>
+        </div>
+        <div class="card-container flex flex-wrap">
+          <div
+            class="card p-10 flex-1 lg:mr-10 mt-10 shadow-md border"
+            data-aos="zoom-in-right"
+            data-aos-offset="-100"
+            data-aos-delay="0"
+            data-aos-duration="500"
+            data-aos-easing="ease-in-out"
+            data-aos-mirror="true"
+            data-aos-once="false"
+            data-aos-anchor-placement="top-center"
+          >
+            <h1 class="text-3xl font-serif text-tcolor">WorkFlow</h1>
+            <div class="mt-5 divide-y divide-blue-500">
+              <h1 class="my-5 text-2xl text-tcolor">
+                <span class="text-5xl mr-2 text-tcolor">19$</span>/Month
+              </h1>
+              <ul class="my-5">
+                <li class="my-5 items-center text-tcolor text-xl font-normal">
+                  <i class="fa-solid fa-check text-2xl mr-2 text-blue-500"></i
+                  >Lorem sit amet.
+                </li>
+                <li class="my-5 items-center text-tcolor text-xl font-normal">
+                  <i class="fa-solid fa-check text-2xl mr-2 text-blue-500"></i
+                  >Lorem ipsum dolor Lorem, ipsum. sit amet.
+                </li>
+                <li class="my-5 items-center text-tcolor text-xl font-normal">
+                  <i class="fa-solid fa-check text-2xl mr-2 text-blue-500"></i
+                  >Lorem ipsum ead gadadf dar sit amet.
+                </li>
+                <li class="my-5 items-center text-tcolor text-xl font-normal">
+                  <i class="fa-solid fa-check text-2xl mr-2 text-blue-500"></i
+                  >Lorem ipsum dolor sit amet.
+                </li>
+                <li
+                  class="my-5 items-center line-through text-checked text-xl font-normal"
+                >
+                  <i class="fa-solid fa-x text-2xl mr-2 text-blue-500"></i>Lorem
+                  lor sit amet.
+                </li>
+                <li
+                  class="my-5 items-center line-through text-checked text-xl font-normal"
+                >
+                  <i class="fa-solid fa-x text-2xl mr-2 text-blue-500"></i>Lorem
+                  iet.
+                </li>
+                <li
+                  class="my-5 items-center line-through text-checked text-xl font-normal"
+                >
+                  <i class="fa-solid fa-x text-2xl mr-2 text-blue-500"></i>Lorem
+                  ipsum dolor sit amet.
+                </li>
+                <li
+                  class="my-5 items-center line-through text-checked text-xl font-normal"
+                >
+                  <i class="fa-solid fa-x text-2xl mr-2 text-blue-500"></i>Lorem
+                  ipsum dol Lorem, ipsuor sit amet.
+                </li>
+              </ul>
+              <div class="flex justify-center">
+                <button
+                  class="px-24 py-4 text-xl font-bold my-5 rounded-lg bg-blue-500 text-white hover:border hover:bg-white hover:text-blue-500 duration-150"
+                >
+                  Start Free
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="card p-10 flex-1 lg:ml-10 mt-10 shadow-md border"
+            data-aos="zoom-in-left"
+            data-aos-offset="-100"
+            data-aos-delay="0"
+            data-aos-duration="500"
+            data-aos-easing="ease-in-out"
+            data-aos-mirror="true"
+            data-aos-once="false"
+            data-aos-anchor-placement="top-center"
+          >
+            <h1 class="text-3xl font-serif text-tcolor">WorkFlow Plus</h1>
+            <div class="mt-5 divide-y divide-blue-500">
+              <h1 class="my-5 text-2xl text-tcolor">
+                <span class="text-5xl mr-2 text-tcolor">29$</span> /Month
+              </h1>
+              <ul class="my-5">
+                <li class="my-5 items-center text-tcolor text-xl font-normal">
+                  <i class="fa-solid fa-check text-2xl mr-2 text-blue-500"></i
+                  >Lorem ipssit amet.
+                </li>
+                <li class="my-5 items-center text-tcolor text-xl font-normal">
+                  <i class="fa-solid fa-check text-2xl mr-2 text-blue-500"></i
+                  >Lorem ipsr sit amet.
+                </li>
+                <li class="my-5 items-center text-tcolor text-xl font-normal">
+                  <i class="fa-solid fa-check text-2xl mr-2 text-blue-500"></i
+                  >Lorem ipsum dolor sit at.
+                </li>
+                <li class="my-5 items-center text-tcolor text-xl font-normal">
+                  <i class="fa-solid fa-check text-2xl mr-2 text-blue-500"></i
+                  >Lorem ipsum domet.
+                </li>
+                <li class="my-5 items-center text-tcolor text-xl font-normal">
+                  <i class="fa-solid fa-check text-2xl mr-2 text-blue-500"></i
+                  >Lorem ipsum dolamet.
+                </li>
+                <li class="my-5 items-center text-tcolor text-xl font-normal">
+                  <i class="fa-solid fa-check text-2xl mr-2 text-blue-500"></i
+                  >Lorem ipsum sit Lorem ipsum dolor sit. amet.
+                </li>
+                <li class="my-5 items-center text-tcolor text-xl font-normal">
+                  <i class="fa-solid fa-check text-2xl mr-2 text-blue-500"></i
+                  >Lorem ipsum dolor sit amet.
+                </li>
+                <li class="my-5 items-center text-tcolor text-xl font-normal">
+                  <i class="fa-solid fa-check text-2xl mr-2 text-blue-500"></i
+                  >Lorem ipsum Lorem, ipsum. dolor sit amet.
+                </li>
+              </ul>
+              <div class="flex justify-center">
+                <button
+                  class="px-24 py-4 text-xl font-bold my-5 rounded-lg bg-blue-500 text-white hover:border hover:bg-white hover:text-blue-500 duration-150"
+                >
+                  Start Free
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="w-3/4 my-10 mx-auto">
+        <h1 class="text-3xl font-serif text-blue-500 text-center">
+          Super charge your work with addons
+        </h1>
+        <div
+          class="w-full py-8 px-10 shadow-lg lg:flex my-10 items-center"
+          data-aos="fade-left"
+          data-aos-offset="-100"
+          data-aos-delay="0"
+          data-aos-duration="500"
+          data-aos-easing="ease-in-out"
+          data-aos-mirror="true"
+          data-aos-once="false"
+          data-aos-anchor-placement="top-center"
+        >
+          <div>
+            <h2 class="text-2xl font-bold text-tcolor">Collabrator</h2>
+            <p class="text-xl leading-7 my-5 text-tcolor">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsam
+              sint in inventore quam aut recusandae consequatur id illo, dolorem
+              itaque ex! Ut repellendus fugiat quibusdam saepe sapiente
+              explicabo ipsum qui.
+            </p>
+          </div>
+          <button
+            class="text-4xl font-bold p hovertext-blue-500 lg:ml-10 text-center text-tcolor"
+          >
+            Free
+          </button>
+        </div>
+        <div
+          class="w-full py-8 px-10 shadow-lg lg:flex my-10 items-center"
+          data-aos="fade-right"
+          data-aos-offset="-100"
+          data-aos-delay="0"
+          data-aos-duration="500"
+          data-aos-easing="ease-in-out"
+          data-aos-mirror="true"
+          data-aos-once="false"
+          data-aos-anchor-placement="top-center"
+        >
+          <div>
+            <h2 class="text-2xl font-bold text-tcolor">Partners</h2>
+            <p class="text-xl leading-7 my-5 text-tcolor">
+              Lorem, ipsum dolor recusandae consequatur id illo, dolorem itaque
+              ex! Ut repellendus fugiat quibusdam saepe sapiente explicabo ipsum
+              qui.
+            </p>
+          </div>
+          <button
+            class="text-2xl font-bold hover:text-blue-500 lg:ml-10 text-center"
+            data-aos="fade-up"
+            data-aos-offset="-100"
+            data-aos-delay="0"
+            data-aos-duration="500"
+            data-aos-easing="ease-in-out"
+            data-aos-mirror="true"
+            data-aos-once="false"
+            data-aos-anchor-placement="top-center"
+          >
+            <span class="">
+              <h2 class="text-5xl text-tcolor">9$</h2>
+            </span>
+            <span class="text-xl text-tcolor">/Month</span>
+          </button>
+        </div>
+        <div
+          class="w-full py-8 px-10 shadow-lg lg:flex my-10 items-center text-cente"
+          data-aos="fade-up"
+          data-aos-offset="-100"
+          data-aos-delay="0"
+          data-aos-duration="500"
+          data-aos-easing="ease-in-out"
+          data-aos-mirror="true"
+          data-aos-once="false"
+          data-aos-anchor-placement="top-center"
+        >
+          <div>
+            <h2 class="text-2xl font-bold text-tcolor">Bonsai Tax</h2>
+            <p class="text-xl leading-7 my-5 text-tcolor">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsam
+              sint in inventoendus fugiat quibusdam saepe sapiente explicabo
+              ipsum qui.
+            </p>
+            <a
+              href="#"
+              class="text-blue-500 text-xl font-semibold hover:underline"
+              >Learn More
+            </a>
+          </div>
+          <button
+            class="text-2xl font-bold hover:text-blue-500 lg:ml-10 text-center"
+            data-aos="fade-up"
+            data-aos-offset="-100"
+            data-aos-delay="0"
+            data-aos-duration="500"
+            data-aos-easing="ease-in-out"
+            data-aos-mirror="true"
+            data-aos-once="false"
+            data-aos-anchor-placement="top-center"
+          >
+            <span class="">
+              <h2 class="text-5xl text-tcolor">10$</h2>
+            </span>
+            <span class="text-xl text-tcolor">/Month</span>
+          </button>
+        </div>
+      </div>
+    </header>
+    <div
+      class="bg-bgpri mx-auto rounded-2xl w-3/4 lg:flex p-20 relative my-20"
+      data-aos="zoom-in"
+      data-aos-offset="-100"
+      data-aos-delay="0"
+      data-aos-duration="500"
+      data-aos-easing="ease-in-out"
+      data-aos-mirror="true"
+      data-aos-once="false"
+      data-aos-anchor-placement="top-center"
+    >
+      <div class="flex flex-col text-center lg:my-0 my-10">
+        <h1 class="text-2xl text-tcolor font-serif">
+          It's <span class="text-3xl text-blue-500">Your</span> business.
+        </h1>
+        <h1 class="text-2xl text-tcolor font-serif">
+          We are here to help it grow.
+        </h1>
+      </div>
+      <button
+        class="px-16 py-5 m-2 bg-blue-500 text-2xl font-bold text-white rounded-lg lg:absolute lg:right-20"
+      >
+        Start Free
+      </button>
+    </div>
+    <h1
+      class="text-center text-3xl font-serif text-blue-500 my-20"
+      data-aos="zoom-in"
+      data-aos-offset="-200"
+      data-aos-delay="0"
+      data-aos-duration="500"
+      data-aos-easing="ease-in-out"
+      data-aos-mirror="true"
+      data-aos-once="false"
+      data-aos-anchor-placement="top-center"
+    >
+      Frequently asked questions
+    </h1>
+    <div
+      class="w-3/4 mx-auto border shadow-lg px-10 py-10 my-10"
+      data-aos="flip-left"
+      data-aos-offset="-100"
+      data-aos-delay="0"
+      data-aos-duration="500"
+      data-aos-easing="ease-in-out"
+      data-aos-mirror="true"
+      data-aos-once="false"
+      data-aos-anchor-placement="top-center"
+    >
+      <div class="lg:flex text-center justify-between">
+        <h2 class="text-2xl text-tcolor">how does 14 days trial works</h2>
+        <button class="text-xl btn1 text-blue-500">More</button>
+      </div>
+      <p class="w-4/5 m-auto my-10 para1 text-tcolor">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore
+        earum ipsam nobis vel non quia tenetur unde reiciendis cupiditate natus
+        dicta maxime expedita, vero nesciunt placeat eligendi totam temporibus
+        voluptas. Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
+        ratione neque totam possimus culpa optio placeat iure ipsa obcaecati
+        necessitatibus temporibus, debitis sunt quam consequuntur ipsam ad eius
+        delectus id. Facere et excepturi quasi suscipit quae repellendus,
+        laudantium accusantium aliquam facilis quibusdam atque voluptates maxime
+        repellat placeat. Beatae, impedit nulla?
+      </p>
+    </div>
+    <div
+      class="w-3/4 mx-auto border shadow-lg px-10 py-10 my-10 text-center"
+      data-aos="flip-right"
+      data-aos-offset="-200"
+      data-aos-delay="0"
+      data-aos-duration="500"
+      data-aos-easing="ease-in-out"
+      data-aos-mirror="true"
+      data-aos-once="false"
+      data-aos-anchor-placement="top-buttom"
+    >
+      <div class="lg:flex justify-between">
+        <h2 class="text-2xl text-tcolor">Can I change plans everytime?</h2>
+        <button class="text-xl btn1 text-blue-500">More</button>
+      </div>
+      <p class="w-4/5 m-auto my-10 para1 text-tcolor">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore
+        earum ipsam nobis vel non quia tenetur unde reiciendis cupiditate natus
+        dicta maxime expedita, vero nesciunt placeat eligendi totam temporibus
+        voluptas. Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
+        ratione neque totam possimus culpa optio placeat iure ipsa obcaecati
+        necessitatibus temporibus, debitis sunt quam consequuntur ipsam ad eius
+        delectus id. Facere et excepturi quasi suscipit quae repellendus,
+        laudantium accusantium aliquam facilis quibusdam atque voluptates maxime
+        repellat placeat. Beatae, impedit nulla?
+      </p>
+    </div>
+    <div
+      class="w-3/4 mx-auto border shadow-lg px-10 py-10 my-10 text-center"
+      data-aos="fade-up"
+      data-aos-offset="-300"
+      data-aos-delay="0"
+      data-aos-duration="500"
+      data-aos-easing="ease-in-out"
+      data-aos-mirror="true"
+      data-aos-once="false"
+      data-aos-anchor-placement="top-buttom"
+    >
+      <div class="lg:flex justify-between">
+        <h2 class="text-2xl text-tcolor">
+          How do I pause Bonsai subscription?
+        </h2>
+        <button class="text-xl btn1 text-blue-500">More</button>
+      </div>
+      <p class="w-4/5 m-auto my-10 para1 text-tcolor">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore
+        earum ipsam nobis vel non quia tenetur unde reiciendis cupiditate natus
+        dicta maxime expedita, vero nesciunt placeat eligendi totam temporibus
+        voluptas. Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
+        ratione neque totam possimus culpa optio placeat iure ipsa obcaecati
+        necessitatibus temporibus, debitis sunt quam consequuntur ipsam ad eius
+        delectus id. Facere et excepturi quasi suscipit quae repellendus,
+        laudantium accusantium aliquam facilis quibusdam atque voluptates maxime
+        repellat placeat. Beatae, impedit nulla?
+      </p>
+    </div>
+    <footer class="bg-white w-3/4 mx-auto">
+      <div>
+        <i
+          class="fa-brands fa-facebook text-2xl text-blue-500 mx-2 cursor-pointer ease-in duration-150 hover:text-4xl"
+        ></i>
+        <i
+          class="fa-brands fa-twitter text-2xl text-blue-500 mx-2 cursor-pointer ease-in duration-150 hover:text-4xl"
+        ></i>
+        <i
+          class="fa-brands fa-instagram text-2xl text-blue-500 mx-2 cursor-pointer ease-in duration-150 hover:text-4xl"
+        ></i>
+        <i
+          class="fa-brands fa-youtube text-2xl text-blue-500 mx-2 cursor-pointer ease-in duration-150 hover:text-4xl"
+        ></i>
+        <i
+          class="fa-brands fa-snapchat text-2xl text-blue-500 mx-2 cursor-pointer ease-in duration-150 hover:text-4xl"
+        ></i>
+      </div>
+      <div class="mx-auto w-full max-w-screen-xl">
+        <div class="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
+          <div>
+            <h2 class="mb-6 text-xl font-semibold uppercase text-blue-500">
+              Company
+            </h2>
+            <ul class="text-tcolor font-medium">
+              <li class="mb-4">
+                <a href="#" class="hover:underline">About</a>
+              </li>
+              <li class="mb-4">
+                <a href="#" class="hover:underline">Careers</a>
+              </li>
+              <li class="mb-4">
+                <a href="#" class="hover:underline">Brand Center</a>
+              </li>
+              <li class="mb-4">
+                <a href="#" class="hover:underline">Blog</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="mb-6 text-xl font-semibold uppercase text-blue-500">
+              Help center
+            </h2>
+            <ul class="text-tcolor font-medium">
+              <li class="mb-4">
+                <a href="#" class="hover:underline">Discord Server</a>
+              </li>
+              <li class="mb-4">
+                <a href="#" class="hover:underline">Twitter</a>
+              </li>
+              <li class="mb-4">
+                <a href="#" class="hover:underline">Facebook</a>
+              </li>
+              <li class="mb-4">
+                <a href="#" class="hover:underline">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="mb-6 text-xl font-semibold uppercase text-blue-500">
+              Legal
+            </h2>
+            <ul class="text-tcolor font-medium">
+              <li class="mb-4">
+                <a href="#" class="hover:underline">Privacy Policy</a>
+              </li>
+              <li class="mb-4">
+                <a href="#" class="hover:underline">Licensing</a>
+              </li>
+              <li class="mb-4">
+                <a href="#" class="hover:underline">Terms & Conditions</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="mb-6 text-xl font-semibold uppercase text-blue-500">
+              Download
+            </h2>
+            <ul class="text-tcolor font-medium">
+              <li class="mb-4">
+                <a href="#" class="hover:underline">iOS</a>
+              </li>
+              <li class="mb-4">
+                <a href="#" class="hover:underline">Android</a>
+              </li>
+              <li class="mb-4">
+                <a href="#" class="hover:underline">Windows</a>
+              </li>
+              <li class="mb-4">
+                <a href="#" class="hover:underline">MacOS</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../jq.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script>
+      function show() {
+        document.getElementById("form").classList.toggle("hidden");
+      }
+      $(document).ready(function () {
+        $(".para1").hide();
+        $(".btn1").click(function () {
+          $(this).parent().parent().children("p").toggle(500);
+          if ($(this).html() === "More") {
+            $(this).html("Less");
+          } else {
+            $(this).html("More");
+          }
+        });
+      });
+      let btn1 = $("#nav-btn1");
+      let btn2 = $("#nav-btn2");
+      let btn3 = $("#nav-btn3");
+      let btn4 = $("#nav-btn4");
+      function navFun1() {
+        $("btn1").addClass("text-blue-500");
+        $("btn2").removeClass("text-blue-500");
+        $("btn3").removeClass("text-blue-500");
+        $("btn4").removeClass("text-blue-500");
+      }
+      function navFun2() {
+        $("btn2").addClass("text-blue-500");
+        $("btn1").removeClass("text-blue-500");
+        $("btn3").removeClass("text-blue-500");
+        $("btn4").removeClass("text-blue-500");
+      }
+      function navFun3() {
+        $("btn3").addClass("text-blue-500");
+        $("btn2").removeClass("text-blue-500");
+        $("btn1").removeClass("text-blue-500");
+        $("btn4").removeClass("text-blue-500");
+      }
+      function navFun4() {
+        $("btn4").addClass("text-blue-500");
+        $("btn2").removeClass("text-blue-500");
+        $("btn3").removeClass("text-blue-500");
+        $("btn1").removeClass("text-blue-500");
+      }
+    </script>
+  </body>
+</html>
